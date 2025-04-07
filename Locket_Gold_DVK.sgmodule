@@ -1,4 +1,4 @@
-#!url=https://raw.githubusercontent.com/hvbstar/coderhvb/main/Locket_Gold_HVB.sgmodule
+#!url=https://raw.githubusercontent.com/dinhvankhoii/dvk/main/Locket_Gold_DVK.sgmodule
 #!name=Locket-DVK-Gold
 #!desc=Crack By DinhVanKhoi
 
@@ -6,9 +6,9 @@
 user-agent = Locket/1.0.0 (iPhone; iOS 18.1.1; Scale/3.00)
 
 [Script]
-# ~ By HoangVanBao
+# ~ By DinhVanKhoi
 # ~ Enhanced for Shadowrocket, Surge, & LanceX
-revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.*\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/hvbstar/coderhvb/main/Locket_dvk_fix.js, requires-body=true, max-size=-1, timeout=120
+revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.*\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/dinhvankhoii/dvk/main/Locket_dvk_fix.js, requires-body=true, max-size=-1, timeout=120
 
 deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.*\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/dinhvankhoi/dvk/main/deleteHeader.js, timeout=120
 
