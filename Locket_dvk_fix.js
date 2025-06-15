@@ -1,6 +1,6 @@
 // Updated Locket_dvk_fix.js
-// ========= Đặt ngày tham gia là 1/1/2025 ========= //
-var specificDate = "2025-01-01T00:00:00Z"; // Định dạng ISO 8601
+// ========= Đặt ngày tham gia là 5/5/2025 ========= //
+var specificDate = "2025-05-05T00:00:00Z"; // Định dạng ISO 8601
 
 // ========= ID Mapping ========= //
 const mapping = {
@@ -25,7 +25,7 @@ if (!obj.subscriber.entitlements) obj.subscriber.entitlements = {};
 if (!obj.subscriber.subscriptions) obj.subscriber.subscriptions = {};
 
 // ========= Tạo thông tin gói Locket Gold ========= //
-var hoangvanbao = {
+var dinhvankhoii = {
   is_sandbox: false,
   ownership_type: "PURCHASED",
   billing_issues_detected_at: null,
@@ -38,10 +38,10 @@ var hoangvanbao = {
   store: "app_store"
 };
 
-var hvb_entitlement = {
+var dvk_entitlement = {
   grace_period_expires_date: null,
   purchase_date: specificDate, // Ngày tham gia
-  product_identifier: "com.dinhvankhoi.premium.yearly",
+  product_identifier: "com.dinhvankhoii.premium.yearly",
   expires_date: "2099-12-18T01:04:17Z" // Ngày hết hạn lâu dài
 };
 
@@ -50,13 +50,13 @@ const match = Object.keys(mapping).find(e => ua.includes(e));
 
 if (match) {
   let entitlementKey = mapping[match][0] || "Locket";
-  let subscriptionKey = mapping[match][1] || "com.dinhvankhoi.premium.yearly";
+  let subscriptionKey = mapping[match][1] || "com.dinhvankhoii.premium.yearly";
 
-  obj.subscriber.subscriptions[subscriptionKey] = dinhvankhoi;
+  obj.subscriber.subscriptions[subscriptionKey] = dinhvankhoii;
   obj.subscriber.entitlements[entitlementKey] = dvk_entitlement;
 } else {
   // Gán mặc định nếu không có khớp
-  obj.subscriber.subscriptions["com.dinhvankhoi.premium.yearly"] = dinhvankhoi
+  obj.subscriber.subscriptions["com.dinhvankhoii.premium.yearly"] = dinhvankhoii;
   obj.subscriber.entitlements["Locket"] = dvk_entitlement;
 }
 
